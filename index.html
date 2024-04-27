@@ -296,7 +296,7 @@ display: flex;
 <img id="qr"  src="qr.jpg"  alt="">
 </div>
 
-<p  id="colour_change" class="big_font">enter transactiion id last 4 digit<input  id="transaction_id" value="" type="text"></p>
+<p  id="colour_change" class="big_font">Enter UPI transactiion id last 4 digit<input  id="transaction_id" value="" type="text"></p>
 <BUtton class="button"  onclick="section_C()">preview And Submit Payment data </BUtton>
 </div>
 
@@ -325,7 +325,7 @@ display: flex;
 <BR>
 <div class="sec_d_element"><p>Order Date :- <p id="date"></p></p></div>
 <BR>
-<div class="sec_d_element"> <p>transaction ID :- </p><P id="transaction_ID"></P></div>
+<div class="sec_d_element"> <p>UPI transaction ID :- </p><P id="transaction_ID"></P></div>
 <BR>
 
 
@@ -424,12 +424,12 @@ function section_B(){
 
 
 
-// sec_a.style.opacity = 1;
-// sec_b.style.opacity = 1;
-// sec_a.style.width= "0px";
-// sec_b.style.width = "0px";
-// sec_a.style.height= "0px";
-// sec_b.style.height = "0px";
+sec_a.style.opacity = 0;
+sec_b.style.opacity = 0;
+sec_a.style.width= "0px";
+sec_b.style.width = "0px";
+sec_a.style.height= "0px";
+sec_b.style.height = "0px";
 
 document.getElementById("product-name").disabled = true;
 
@@ -485,7 +485,7 @@ one ${name_product_name} prize is = ${ONE_PRODUCT_PRIZE} RS
 product quantity = ${output2}
 total ${output2} product prise is = ${output1 * output2} RS
 scan following QR code and  pay = ${output1 * output2} RS
-after payment note down the last 4 digits of transaction id`)
+after payment note down the last 4 digits of UPI transaction id`)
 
 /* background-color: rgb(228, 162, 81); */
 /* background-color: rgb(215, 235, 177); */
@@ -518,6 +518,10 @@ document.getElementById("product-quntity").disabled = true;
 // document.querySelector(".a11").classList.add("small");
 // document.querySelector(".a12").classList.add("small");
 // };
+setTimeout(() => {
+    alert(`${name_of_custemer} या QR कोड वर कोणत्याही पेमेंट अँप ने ${output1 * output2} RS पेमेंट करा. 
+    UPI Transaction id शेवटचे 4 पहा आणि लिहा.`)
+}, 5000);
 
 }
 
@@ -585,7 +589,7 @@ document.getElementById("hide_procede_tp_payment_btn_1").style.opacity = 1;
 
 if ( document.getElementById("transaction_id").value == ``||null)
 {
-alert("Please enter Transaction id ;without this information Order is not confirmed .")
+alert("Please enter UPI Transaction id ;without this information Order is not confirmed .")
 section_b()
 }else{
 // sec_a.style.height = "2px";
@@ -638,6 +642,9 @@ day.padStart('2', '0') : day;
 
 // Printing the present date
 console.log(`${day}-${month}-${year}`);
+
+
+
 } ;
 
 tomorrow()
@@ -669,7 +676,7 @@ var url = "https://wa.me/919834926132?text="
 + "get discount:- " + `20%` + "%0a" + "%0a"
 +  "TOTAL"  +  total_product_prize  +  "%0a" + "%0a"
 +"date = "+ " " + new Date +  "%0a"  + "order delivery :- within 6 Days"+ "%0a"+ "%0a"
-+"Transaction id = "+ " " + transaction_ID +  "%0a" + "%0a"
++"UPI Transaction id = "+ " " + transaction_ID +  "%0a" + "%0a"
 
 
 window.open(url, '_blank').focus();
@@ -685,5 +692,4 @@ window.open(url, '_blank').focus();
 </script>
 </body>
 </html>
-
 
