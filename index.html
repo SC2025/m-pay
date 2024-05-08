@@ -30,7 +30,7 @@ font-weight: 1000;
 }
 #qr{
     height: 35%;
-    width: 35%;
+    width: 40%;
     margin: 3px;
     padding: 3px;
     display: flex;
@@ -630,7 +630,9 @@ c_c.innerHTML = `${day}-${month}-${year}`;
     e.value == "Other" 
     ){alert(`${d.value} तुम्ही Other हा पर्याय  निवडला आहे  
     रहिमतपुर पासून 4 की.मी Free order delivery आहे ;
+
     ${d.value} त्यामुळे रहिमतपुर मधील तुमच्या मित्राचा किंवा नातेवाईकाचा पत्ता द्या म्हणजे Free order delivery भेटेल.
+
     जर तुमचा पत्ता  रहिमतपुर पासून 4 की.मी च्या आत असेल तर रहिमतपुर हा पर्याय  निवडा आणि खालील "Full detail Address:-" मध्ये पत्ता लिहा`)
     document.getElementById("addres_add").style.backgroundColor = "black"
     window.location.reload()
@@ -692,12 +694,15 @@ setTimeout(() => {
         Your Order ID :- ${c.innerHTML}.
         Product name :-${name_product_name}
         productget discount* :- 20 %
-        one ${name_product_name} prise :- ${productrs} RS
-        Total ${product_quantity} product prise prise ${prise} RS
+        
+        one ${name_product_name} ${name_product_name} prise :- ${productrs} RS
+        
+        Total ${product_quantity}  product prise ${prise} RS
+        
         कोणत्याही पेमेंट अँप ने हा कोड स्कॅन करून ${prise} RS पेमेंट करा. 
         पेमेंट झाल्यानंतर UPI Transaction id चे शेवटचे 4 डिजिट पहा आणि बॅक येऊन लिहा.
         पेमेंट झाले असेल तर फक्त UPI Transaction id लिहा`)
-    }, 2000);
+    }, 1000);
 
 
 // order id 
