@@ -267,7 +267,7 @@ align-items: center;
 }
 .qrimgbottomhedding{
     
-    background-color: rgb(235, 171, 171);
+    background-color: rgb(236, 216, 216);
     padding: 2PX;
     border: 1px solid black;
     border-radius: 9%;
@@ -312,7 +312,7 @@ align-items: center;
 <option value="Other">Other</option>
 </select>
 
-<p >Full Address:- <input id="address" type="text"></p></p>
+<p >Full detail Address:- <input id="address" type="text"></p></p>
 <div>
 <button  id="secA_btn"  class="button" onclick="secA()">Submit personal information</button>
 
@@ -630,7 +630,8 @@ c_c.innerHTML = `${day}-${month}-${year}`;
     e.value == "Other" 
     ){alert(`${d.value} तुम्ही Other हा पर्याय  निवडला आहे  
     रहिमतपुर पासून 4 की.मी Free order delivery आहे ;
-    ${d.value} त्यामुळे रहिमतपुर मधील तुमच्या मित्राचा किंवा नातेवाईकाचा पत्ता द्या म्हणजे Free order delivery भेटेल.`)
+    ${d.value} त्यामुळे रहिमतपुर मधील तुमच्या मित्राचा किंवा नातेवाईकाचा पत्ता द्या म्हणजे Free order delivery भेटेल.
+    जर तुमचा पत्ता  रहिमतपुर पासून 4 की.मी च्या आत असेल तर रहिमतपुर हा पर्याय  निवडा आणि खालील "Full detail Address:-" मध्ये पत्ता लिहा`)
     document.getElementById("addres_add").style.backgroundColor = "black"
     window.location.reload()
     }
@@ -688,6 +689,11 @@ alert(`${d.value}
 //alert payment page 
 setTimeout(() => {
         alert(`${d.value}
+        Your Order ID :- ${c.innerHTML}.
+        Product name :-${name_product_name}
+        productget discount* :- 20 %
+        one ${name_product_name} prise :- ${productrs} RS
+        Total ${product_quantity} product prise prise ${prise} RS
         कोणत्याही पेमेंट अँप ने हा कोड स्कॅन करून ${prise} RS पेमेंट करा. 
         पेमेंट झाल्यानंतर UPI Transaction id चे शेवटचे 4 डिजिट पहा आणि बॅक येऊन लिहा.
         पेमेंट झाले असेल तर फक्त UPI Transaction id लिहा`)
@@ -704,7 +710,7 @@ m.innerHTML = `Product name :-${name_product_name}`
       // product rs
       var  selectElement = i;
  var productrs = selectElement.value;
- n.innerHTML = `one ${name_product_name} prise :- ${productrs}`;
+ n.innerHTML = `one ${name_product_name} prise :- ${productrs} RS`;
 
     //product quantity
     var selectElement = j;
@@ -714,7 +720,7 @@ m.innerHTML = `Product name :-${name_product_name}`
 
     //total prise of selected product
     var prise =  productrs * product_quantity;
-   q.innerHTML = ` Total ${product_quantity} product prise prise ${prise} `;
+   q.innerHTML = ` Total ${product_quantity} product prise prise ${prise} RS`;
    p.innerHTML = `productget discount* :- 20 %`
 
 //    //transaction id
