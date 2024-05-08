@@ -309,6 +309,7 @@ align-items: center;
 <option value="rahimatpur">Rahimatpur</option>
 <option value="boriv">Boriv</option>
 <option value="Naharwadi">Naharwadi</option>
+<option value="Other">Other</option>
 </select>
 
 <p >Full Address:- <input id="address" type="text"></p></p>
@@ -332,7 +333,7 @@ Please select quantity.
 and proceed to payment.`)">
 <option  value="00" >Select Product</option>
 
-<option  value="00" >Select Product</option>
+
 <option value="13">Checks Multi-Color RUMAL 43 cm x 50 cm </option>
 <option value="15">Checks Multi-Color RUMAL 50 cm x 53 cm</option>
 <option value="21">Checks White-Color RUMAL 50 cm x 53 cm</option>
@@ -623,8 +624,17 @@ c_c.innerHTML = `${day}-${month}-${year}`;
     e.value == "select city" || ``|| null
     ){alert(`${d.value} please select villege option; without this information order is not confirmed `)
     document.getElementById("addres_add").style.backgroundColor = "black"
- 
+    window.location.reload()
     }
+    else if(
+    e.value == "Other" 
+    ){alert(`${d.value} तुम्ही Other हा पर्याय  निवडला आहे  
+    रहिमतपुर पासून 4 की.मी Free order delivery आहे ;
+    ${d.value} त्यामुळे रहिमतपुर मधील तुमच्या मित्राचा किंवा नातेवाईकाचा पत्ता द्या म्हणजे Free order delivery भेटेल.`)
+    document.getElementById("addres_add").style.backgroundColor = "black"
+    window.location.reload()
+    }
+
     
     else{
 d.disabled = true;
@@ -665,7 +675,7 @@ l.style.opacity = 1;
 alert(`${d.value} 
     product information save successfully;
     procced @ payment`)
-    };
+    
 //select villege
 // var select_villege = document.querySelector('#addres_add');
 //  var option_villege_select = select_villege.value;
@@ -727,6 +737,9 @@ document.getElementById("bill").innerHTML =  `${d.value} scan QR code and paymen
 // }
    }
 
+
+}
+
    
 
 function secC(){
@@ -740,7 +753,7 @@ function secC(){
   }else{
    t.style.opacity = 1;
    l.style.opacity = 0.2;
-  }
+  
   document.getElementById("i1").innerHTML = `Order ID :- ${c.innerHTML}`;
   document.getElementById("i2").innerHTML = `name of custemer :- ${d.value}`;
   document.getElementById("i3").innerHTML = `Villege Name :- ${e.value}`;
@@ -770,7 +783,7 @@ l.remove();
 
 
 }
-
+}
 
 
 
