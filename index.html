@@ -302,9 +302,9 @@ align-items: center;
 <div  id="section_A">
   
 <div class="main_hedding" id="section_A_h">-Personal Details-</div>
-<p>Name:- <input id="name" type="text"></p>
+<p>नाव :- <input id="name" type="text"></p>
 
-<p  >Address:- <select   name=""  id="addres_add">
+<p  >गाव निवडा :- <select   name=""  id="addres_add">
 <option value="select city">select city</option>
 <option value="rahimatpur">Rahimatpur</option>
 <option value="boriv">Boriv</option>
@@ -312,7 +312,7 @@ align-items: center;
 <option value="Other">Other</option>
 </select>
 
-<p >Full detail Address:- <input id="address" type="text"></p></p>
+<p >संपूर्ण पत्ता लिहा :- <input id="address" type="text"></p></p>
 <div>
 <button  id="secA_btn"  class="button" onclick="secA()">Submit personal information</button>
 
@@ -328,10 +328,10 @@ align-items: center;
 <div class="main_hedding" id="section_B_h"></div>
 <select  name="" id="product-name" 
 onchange="alert(`${document.getElementById(`name`).value} 
-you select  ${this.options[this.selectedIndex].text} 
+तुम्ही  ${this.options[this.selectedIndex].text} प्रोड्कट निवडा आहे.
 Please select quantity.
-and proceed to payment.`)">
-<option  value="00" >Select Product</option>
+आणि पेमेंट पेज वर जावा.`)">
+<option  value="00" >प्रोड्कट निवडा</option>
 
 
 <option value="13">Checks Multi-Color RUMAL 43 cm x 50 cm </option>
@@ -646,8 +646,8 @@ d.disabled = true;
     f_one.disabled = true;
     // alert( document.getElementById("name").value +" "+"Thank you" + " your name and addres is save ; please fill product details");
     alert(`${d.value} 
-    personal information save successfully;
-    fill product information.`)
+    तुमची Personal Details सेव्ह झाली आहे. 
+    तुमचा प्रोड्कट निवडा.`)
     };
     secA_div.style.opacity = 0.2;
     g.style.opacity = 1;
@@ -676,8 +676,8 @@ d.disabled = true;
     g.style.opacity = 0.2;
 l.style.opacity = 1;
 alert(`${d.value} 
-    product information save successfully;
-    procced @ payment`)
+तुमची प्रोड्कट ची महिती सेव्ह झाली आहे;
+पेमेंट पेज वर जावा`)
     
 //select villege
 // var select_villege = document.querySelector('#addres_add');
@@ -691,7 +691,7 @@ alert(`${d.value}
 //alert payment page 
 setTimeout(() => {
         alert(`${d.value}
-        Your Order ID :- ${c.innerHTML}.
+        तुमचा ऑर्डर ID :- ${c.innerHTML} आहे.
         Product name :-${name_product_name}
         productget discount* :- 20 %
         
@@ -765,7 +765,7 @@ function secC(){
    t.style.opacity = 1;
    l.style.opacity = 0.2;
   
-  document.getElementById("i1").innerHTML = `Order ID :- ${c.innerHTML}`;
+  document.getElementById("i1").innerHTML = `तुमचा ऑर्डर ID :- ${c.innerHTML} आहे`;
   document.getElementById("i2").innerHTML = `name of custemer :- ${d.value}`;
   document.getElementById("i3").innerHTML = `Villege Name :- ${e.value}`;
   document.getElementById("i4").innerHTML = `Full Address :- ${f.value}`;
