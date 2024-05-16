@@ -536,7 +536,7 @@ function ORDER_ID_PREE() {
             hours = hours ? hours : 12; 
             var minutes = myDate.getMinutes(); 
             minutes = minutes < 10 ? '0' + minutes : minutes; 
-            var myTime = "SK" + hours + minutes + "-"
+            var myTime = "SC" + hours + minutes + "-"
             a.innerHTML = myTime
     } ORDER_ID_PREE()
     
@@ -593,7 +593,7 @@ function ORDER_ID_PREE() {
     day.padStart('2', '0') : day;
     
     // Printing the present date
-c_c.innerHTML = `${day}-${month}-${year}`;
+c_c.innerHTML = `${day}-${month}-${year}-M`;
    }seven_days_after_date()
 
 
