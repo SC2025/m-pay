@@ -314,11 +314,13 @@ align-items: center;
 
 <p >संपूर्ण पत्ता लिहा :- <input id="address" type="text"></p></p>
 <div>
+    <p id="mobnopara">mob no :- <input id="mobno" type="number"></p></p>
+  <button id="mobbtn"> <p >reenter mob no :- <input id="mobnover" type="number"></p></button>
 <button  id="secA_btn"  class="button" onclick="secA()">Submit personal information</button>
 
 </div>
 
-
+ 
 </div>
 
 </div>
@@ -453,9 +455,11 @@ Please select quantity.`)">
 <div id="section_D">
 <p class="main_hedding" id="secD_heding"></p>
 <p class="sec_d_p" id ="all_sec_d_info"></p>
+
 <p class="sec_d_p" id="i1"></p>
 <p class="sec_d_p" id="i2"></p>
 <p class="sec_d_p"  id="i3"></p>
+<p class="sec_d_p_2" id="i16"></p>
 <p class="sec_d_p"  id="i4"></p>
 <p class="sec_d_p"  id="i5"></p>
 <p class="sec_d_p"  id="i6"></p>
@@ -494,7 +498,14 @@ var e = document.getElementById("addres_add");
 
 var f = document.getElementById("address");
 var f_one = document.getElementById("secA_btn");
-        
+
+var mobno = document.getElementById("mobno");
+var mobnover = document.getElementById("mobnover");
+var mobbtn = document.getElementById("mobbtn")
+mobbtn.addEventListener("click",function () {
+    mobnopara.style.opacity = "0";
+})
+
 //section b
 var g = document.getElementById("section_B");
 var h  = document.getElementById("section_B_h");
@@ -636,9 +647,13 @@ c_c.innerHTML = `${day}-${month}-${year}`;
     document.getElementById("addres_add").style.backgroundColor = "black"
     window.location.reload()
     }
+    else if(mobno.value != mobnover.value){
+alert("mob no is not match please relod the page and order again");
+mobnopara.style.opacity = "1";
+mobnopara.style.backgroundColor = "red";
 
-    
-    else{
+}
+    else{ 
 d.disabled = true;
     e.disabled = true
     f.disabled = true;
@@ -744,6 +759,8 @@ document.getElementById("bill").innerHTML =  `${d.value} scan QR code and paymen
 // document.getElementById("google_pay2").href =  "upi://pay?pa=aniruddhamane1000-3@okicici%26am="+price+"%26tn=" 
 // document.getElementById("google_pay3").href =  "upi://pay?pa=aniruddhamane1000-3@okicici%26am="+price+"%26tn=" 
 // }
+
+
    }
 
 
@@ -777,7 +794,7 @@ function secC(){
   document.getElementById("i12").innerHTML = `order delivery before ${c_c.innerHTML}`;
   document.getElementById("i11").innerHTML = `UPI transaction ID :- XXXXXXXX${s.value}`;
 document.getElementById("secD_heding").innerHTML = `- ${d.value} your order summary click to final submit-`;
-
+document.getElementById("i16").innerHTML = "MOB NO-" + mobnover.value;
 
 setTimeout(() => {
     alert(`${d.value} 
@@ -811,6 +828,7 @@ function gotowhatsapp(){
  var b10 =  document.getElementById("i10").innerHTML ;
  var b11 =  document.getElementById("i11").innerHTML ;
  var b12 =  document.getElementById("i12").innerHTML ;
+ var b13 = document.getElementById("i16").innerHTML ;
 
 if (b2 === "" || b3 === ""||b4 === "") {
     alert("please save again -Personal Details-")
@@ -824,6 +842,7 @@ if (b2 === "" || b3 === ""||b4 === "") {
     + "ORDER CONFIRM" + "%0a"
     +"*"+ b1 +"*" + "%0a" + "%0a"
     +"*"+ b2 +"*" + "%0a" + "%0a"
+    +"*"+ b13 +"*" + "%0a" + "%0a"
     +"*"+ b3 +"*" + "%0a" + "%0a"
     +"*"+ b4 +"*"+ "%0a" + "%0a"
     +"*"+ b5 +"*" + "%0a" + "%0a"
