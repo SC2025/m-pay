@@ -325,7 +325,7 @@ align-items: center;
 
 </div>
 
-
+<div id="sec_b">
 <div id="section_B" >
 <div class="main_hedding" id="section_B_h"></div>
 <select  name="" id="product-name" 
@@ -392,6 +392,7 @@ Please select quantity.`)">
 
 
 
+</div>
 </div>
 
 <div  id="section_C">
@@ -648,9 +649,10 @@ c_c.innerHTML = `${day}-${month}-${year}`;
     window.location.reload()
     }
     else if(mobno.value != mobnover.value){
-alert("mob no is not match please relod the page and order again");
+alert("तुमचा मोबाईल नंबर मॅच होत नाही, कृपया पेज रिलोड करा आणि माहिती पुन्हा भरा");
 mobnopara.style.opacity = "1";
 mobnopara.style.backgroundColor = "red";
+document.getElementById("sec_b").remove();
 
 }
     else{ 
@@ -856,6 +858,8 @@ if (b2 === "" || b3 === ""||b4 === "") {
     +"*"+ b11 +"*"+ "%0a" + "%0a"
     +"*"+ "SEND SMS" +"*"
     window.open(url, '_blank').focus();
+
+ 
 }
  
    
@@ -863,7 +867,6 @@ if (b2 === "" || b3 === ""||b4 === "") {
 
    
 </script>
-
 
 
 
