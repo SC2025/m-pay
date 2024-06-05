@@ -796,13 +796,17 @@ document.getElementById("bill").innerHTML =  `${d.value} scan QR code and paymen
 
 function secC(){
     //id if elese
+    
  if(s.value == "")
  {
-    alert(`${d.value}Please enter UPI Transaction id ;
+    alert(`${d.value}Please enter last 4 digit UPI Transaction id ;
     without this information Order is not confirmed.`);
     s.style.backgroundColor = "red";
     secB()
-  }else{
+  } else if(s.value.length != 4){
+alert(`${d.value}pleas enter valid last 4 digit UPI Transaction you enter ${s.value.length} digit`)
+  }
+ else{
    t.style.opacity = 1;
    l.style.opacity = 0.2;
   
