@@ -967,6 +967,8 @@ color: black;
  <br>
 
 <div id="chak_mark"></div>
+<br>
+<button class="button" id="gotowhatsapp">-Submit-</button>
 </BR>
 <div>तुम्ही 20% ची बचत केली त्याबद्दल अभिनंदन. </BR>
   पेमेंट झाल्या नंतर -Submit- या बटन वर क्लिक करा.</BR>
@@ -974,8 +976,6 @@ color: black;
  व्हाट्सअप मध्ये SEND SMS करा तुम्हाला व्हाट्सअप वर तुम्हाला तुमचा 1 ऑर्डर आयडी भेटेल.</BR>
  आयडी भेटल्या नंतर तुमची ऑर्डर आमच्या टीम ला भेटेल.ऑर्डर ची माहिती तपासून आमची टीम तुमची ऑर्डर तुम्हाला लवकरच पाठवेल.</div>
 </div>
-
-<button class="button" id="gotowhatsapp">-Submit-</button>
 
 </div>
 
@@ -1103,15 +1103,15 @@ var selectElement_prod_quantitye = product_quntity_P;
 var transport_charge = 30;
   document.getElementById("final_bill").innerText = 
 `FINAL BILL :-
-product name= ${product_name.innerHTML} --
-product price = ${product_price.innerHTML} RS.--
-discount :- 20 %.--
-quantity = ${selectpro_quntity} SET.--
-transport charges = 30 RS (1 SET).--
+product name= ${product_name.innerHTML}.
+product price = ${product_price.innerHTML} RS.
+discount :- 20 %.
+quantity = ${selectpro_quntity} SET.
+transport charges = 30 RS (1 SET).
 
-BILL = product price x quantity (ADD) transport charges x quantity.--`;
+BILL = product price x quantity (ADD) transport charges x quantity.`;
 
-document.getElementById("finanl_amount").innerText = `BILL = ${product_price.innerHTML} RS X  ${selectpro_quntity} SET (ADD) ${transport_charge} RS X ${selectpro_quntity} SET = ${product_price.innerHTML * selectpro_quntity + transport_charge * selectpro_quntity} RS--`
+document.getElementById("finanl_amount").innerText = `BILL = ${product_price.innerHTML} RS X  ${selectpro_quntity} SET (ADD) ${transport_charge} RS X ${selectpro_quntity} SET = ${product_price.innerHTML * selectpro_quntity + transport_charge * selectpro_quntity} RS`
 
 //qr up and down sms
 document.getElementById("Payment_gatway1").innerHTML = `scan QR code and pay = ${product_price.innerHTML * selectpro_quntity + transport_charge * selectpro_quntity} RS`;
@@ -1256,21 +1256,21 @@ else{
 
     + "Order Details" + "%0a"
 
-    + "order ID -" +  document.getElementById("final_id").innerHTML + "%0a"    
+    + "order ID -" +  document.getElementById("final_id").innerHTML + "%0a"  + "%0a"   
 
-  +  document.getElementById("name_and_address_sumury").innerText + "%0a"
+  +  document.getElementById("name_and_address_sumury").innerText + "%0a"+ "%0a" 
 
-  + product_name.innerHTML  + "%0a" 
+  + product_name.innerHTML  + "%0a" + "%0a" 
 
-  +document.getElementById("finanl_amount").innerText + "%0a"  
+  +document.getElementById("finanl_amount").innerText + "%0a"  + "%0a" 
 
-  +   COLOUR1 + "/" +  COLOUR2 + "/"  + COLOUR3 + "%0a"
+  +   COLOUR1 + "/" +  COLOUR2 + "/"  + COLOUR3 + "%0a"+ "%0a" 
 
   + "ORDER DATE" + " " + document.getElementById("today_date").innerHTML + "%0a"
 
-    + "order delivery before" + " " + document.getElementById("order_del_date").innerHTML + "*" + "%0a"
+    + "order delivery before" + " " + document.getElementById("order_del_date").innerHTML + "*" + "%0a"+ "%0a" 
 
-  + "trans.ID:-XXXXXXX" + document.getElementById("transaction_id").value  + "%0a"
+  + "trans.ID:-XXXXXXX" + document.getElementById("transaction_id").value  + "%0a"+ "%0a" 
 
   + "send SMS"
   window.open(url,'_blank').focus();
