@@ -76,16 +76,21 @@ select{
   padding: 1%;
 }
 
-#Payment_gatway1,#Payment_gatway2,#final_bill{
+#Payment_gatway1,#Payment_gatway2,#final_bill_div{
   border: 2px solid black;
   padding: 5px;
   width: fit-content;
   background-color: rgb(179, 240, 240);
   font-weight: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+margin-top: 5px;
+}
+#finanl_amount{
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 800;
+  padding: 6px;
+  width: fit-content;
+  
 }
 
 .heding{
@@ -727,7 +732,7 @@ color: black;
    </button>
   </p>
 
-  <button  class="button" id="secA_btn" onclick="secA()">view order summary</summary></button>
+  <button  class="button" id="secA_btn">view order summary</summary></button>
 
 
 
@@ -936,16 +941,20 @@ color: black;
       </div>
  </div>
 
-  <div id="name and address_sumury"></div>
-</BR>
-  <div id="product_sumury_name"></div>
-</BR>
-  <div id="selectpro_quntity_result"></div>
-</BR>
-<div>FINAL BILL</div>
-</BR>
+  <div id="name_and_address_sumury"></div>
+  <br>
+  <div id="colour_last_div">
+    <div id="col_last_1"></div>
+    <div id="col_last_2"></div>
+    <div id="col_last_3"></div>
+   </div>
+
+  <div id="final_bill_div">
 <div  id="final_bill"></div>
+<div id="finanl_amount"></div>
 </BR>
+</div>
+
 <DIV id="Payment_gatway1"></DIV>
 </BR>
 <img id="qr_img" src="qr.jpg" alt="qr.jpg">
@@ -956,12 +965,7 @@ color: black;
   <input  id="transaction_id" value="" type="number">
  </div>
  <br>
- <div id="colour_last_div">
-  <div id="col_last_1"></div>
-  <div id="col_last_2"></div>
-  <div id="col_last_3"></div>
- </div>
- <br>
+
 <div id="chak_mark"></div>
 </BR>
 <div>तुम्ही 20% ची बचत केली त्याबद्दल अभिनंदन. </BR>
@@ -1002,7 +1006,21 @@ document.getElementById("mobbtn").addEventListener("click",function() {
   document.getElementById("mobnopara").style.opacity = "0";
 })
 
-function secA() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.getElementById("secA_btn").addEventListener("click",function () {
+
   if (name_p.value == "") {
  alert("dear customer कृपया नाव लिहा");
  name_p.style.backgroundColor = "rgb(239, 118, 118)";
@@ -1064,7 +1082,7 @@ alert(`${name_p.value}
 }
 else{
   //name and address detail
-  document.getElementById("name and address_sumury").innerHTML = 
+  document.getElementById("name_and_address_sumury").innerText = 
   ` ${name_p.value}.| 
 ${city_city_p.value}.|
 ${fulladdress_p.value}.|
@@ -1072,26 +1090,28 @@ mobail no- ${whatsappno_rewrite_p.value}.
   `
 
 
-  //product name
-  document.getElementById("product_sumury_name").innerHTML = 
-`product name-${product_name.innerHTML}`;
-
 
 
 
 //product Quantity
 var selectElement_prod_quantitye = product_quntity_P;
   var selectpro_quntity = selectElement_prod_quantitye.value;
-document.getElementById("selectpro_quntity_result").innerHTML = ` product quantity =  ${selectpro_quntity}`;
 
 
 
 //final bill
 var transport_charge = 30;
-  document.getElementById("final_bill").innerHTML = 
-`product price ${product_price.innerHTML} RS X product quantity ${selectpro_quntity} SET + transport charge ${transport_charge} X product quqntity ${selectpro_quntity}
- = ${product_price.innerHTML * selectpro_quntity + transport_charge * selectpro_quntity} RS`
+  document.getElementById("final_bill").innerText = 
+`FINAL BILL :-
+product name= ${product_name.innerHTML} --
+product price = ${product_price.innerHTML} RS.--
+discount :- 20 %.--
+quantity = ${selectpro_quntity} SET.--
+transport charges = 30 RS (1 SET).--
 
+BILL = product price x quantity (ADD) transport charges x quantity.--`;
+
+document.getElementById("finanl_amount").innerText = `BILL = ${product_price.innerHTML} RS X  ${selectpro_quntity} SET (ADD) ${transport_charge} RS X ${selectpro_quntity} SET = ${product_price.innerHTML * selectpro_quntity + transport_charge * selectpro_quntity} RS--`
 
 //qr up and down sms
 document.getElementById("Payment_gatway1").innerHTML = `scan QR code and pay = ${product_price.innerHTML * selectpro_quntity + transport_charge * selectpro_quntity} RS`;
@@ -1109,14 +1129,14 @@ document.getElementById("chak_mark").innerHTML = `I am ${name_p.value} i know al
        {
   document.getElementById("JEANS").remove();
   document.getElementById("Petticoat").remove();
-  alert(`${name_first.value}
+  alert(`${name_p.value}
   select your ${product_name_last_name} colour;
   `)
 }
 else if(product_name.innerHTML == "JEANS"){
   document.getElementById("LEGGINS").remove();
   document.getElementById("Petticoat").remove();
-  alert(`${name_first.value}
+  alert(`${name_p.value}
   select your ${product_name_last_name} colour;
   `)
 }
@@ -1124,21 +1144,14 @@ else if(product_name.innerHTML == "Petticoats 38-40 no."||
 product_name.innerHTML == "Petticoats 42 no."){
   document.getElementById("LEGGINS").remove();
   document.getElementById("JEANS").remove();
-  alert(`${name_first.value}
+  alert(`${name_p.value}
   select your ${product_name_last_name} colour;
   `)
 }
 else{
   document.getElementById("L&j&p_DIV").remove();
 }
-
-//alert payment
-setTimeout(() => {
-alert(`${name_p.value}
- ${product_price.innerHTML * selectpro_quntity + transport_charge * selectpro_quntity} RS पेमेंट करण्यासाठी कोणत्याही पेमेंट अँप ने हा QR कोड स्कॅन करा. आणि शेवटचे 4 अंक लिहा
-`)
-}, 6000);
-}
+})
 
 
 
@@ -1243,11 +1256,13 @@ else{
 
     + "Order Details" + "%0a"
 
-    + "order ID -" +  document.getElementById("final_id").innerHTML + "%0a"
+    + "order ID -" +  document.getElementById("final_id").innerHTML + "%0a"    
 
-   + "discount :- 20 %" + "%0a"
+  +  document.getElementById("name_and_address_sumury").innerText + "%0a"
 
-  +  document.getElementById("name and address_sumury").innerHTML + "%0a"
+  + product_name.innerHTML  + "%0a" 
+
+  +document.getElementById("finanl_amount").innerText + "%0a"  
 
   +   COLOUR1 + "/" +  COLOUR2 + "/"  + COLOUR3 + "%0a"
 
